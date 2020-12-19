@@ -4,7 +4,7 @@ var cep = document.getElementById("numero");
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function(){
     if (this.readyState == 4 && this.status == 200) {
-        document.getElementById("texto").innerHTML = cep;
+        document.getElementById("texto").innerHTML = 
       this.responseText;
     }
 }   
@@ -19,6 +19,6 @@ xhttp.send(JSON.stringify(
 "state": "SP",
 "district": "Parque São Vicente",
 "city": "Mauá",
-"ddd": "11"
-}
-}
+"ddd": "11" }));
+
+    }
