@@ -4,21 +4,19 @@ var cep = document.getElementById("numero");
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function(){
     if (this.readyState == 4 && this.status == 200) {
-        document.getElementById("texto").innerHTML = 
-      this.responseText;
+        var json = JSON.parse(this.responseText);
+            document.getElementById("texto").innerHTML = 'Endereço do CEP'+ '<ul>' +
+            '<li>' + json.cep + '</li>' +
+            '<li>' + json.adress + '</li>' + 
+            '</ul>'
     }
 }   
 
-xhttp.open("GET","https://cep.awesomeapi.com.br/json/09371110",true, )
-xhttp.send(JSON.stringify(
-    {
-"cep": "09371110",
-"address_type": "Rua",
-"address_name": "Marechal Deodoro da Fonseca",
-"address": "Rua Marechal",
-"state": "SP",
-"district": "Parque São Vicente",
-"city": "Mauá",
-"ddd": "11" }));
+xhttp.open("GET","https://cep.awesomeapi.com.br/json/" + cep.value,true,)
+xhttp.send();
+
 
     }
+
+    //formatar o texto igual no pdf informado!
+    // ref do JSON linha 94 e 95 https://github.com/felipe199903/examples_validation_front/blob/master/js/script.js 
