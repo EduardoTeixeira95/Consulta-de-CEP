@@ -15,8 +15,7 @@ document.getElementById("texto").innerHTML = '<h2>' + 'Endereço do CEP'+ '</h2>
 '<li>' + "DDD: " + json.ddd + '</li>' +
 '</ul>'
 }
-}   
-        
+}        
 xhttp.open("GET","https://cep.awesomeapi.com.br/json/" + cep.value,true,)
 xhttp.send();
 }
