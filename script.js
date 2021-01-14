@@ -1,5 +1,4 @@
 function validar(){
-
 var cep = document.getElementById("numero");
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function(){
